@@ -6,7 +6,7 @@ ENV MY_VAR=my_value
 
 
 # Copy any additional files or configurations to the container
-COPY target/MarketPlace.war /usr/local/tomcat/webapps/ROOT.war
+COPY target/marketplaceown.war /usr/local/tomcat/webapps/ROOT.war
 
 
 # Expose any necessary ports
