@@ -3,7 +3,7 @@ name: Build and Deploy Docker Image
 on:
   push:
     branches:
-      - master  # Trigger workflow when changes are pushed to the main branch
+      - main  # Trigger workflow when changes are pushed to the main branch
 
 jobs:
   build:
@@ -11,15 +11,15 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4  # Updated to v4
 
     - name: Set up JDK and Maven
-      uses: actions/setup-java@v2
+      uses: actions/setup-java@v3  # Updated to v3
       with:
         java-version: '11' # Set the required Java version
         distribution: 'adopt'
 
-    - name: Set up Maven
+    - name: Build with Maven
       run: mvn clean install -Dprofile.props.file="prod.properties" # Ensure Maven build step
 
     - name: Set up Docker Buildx
