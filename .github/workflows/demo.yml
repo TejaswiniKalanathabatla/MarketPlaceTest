@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push: 
     branches:
-      - master  # Trigger workflow on push to main branch
+      - master  # Trigger workflow on push to main branch 
 
 jobs:
   build:
